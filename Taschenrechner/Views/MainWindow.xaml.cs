@@ -21,6 +21,14 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void InfoButton_Click(object sender, RoutedEventArgs e)
+    {
+        var aboutWindow = new Views.AboutWindow();
+        aboutWindow.Owner = this;
+        aboutWindow.ShowDialog();
+    }
+
     private void Window_KeyDown(object sender, KeyEventArgs e)
     {
         // Beispiel: Zifferntasten und Operatoren abfangen
@@ -58,13 +66,10 @@ public partial class MainWindow : Window
         else if (e.Key == Key.OemPlus && (Keyboard.Modifiers & ModifierKeys.Shift) == 0)
         {
             (DataContext as MainViewModel)?.OnKeyInput("=");
-            e.Handled = true;
         }
         else if (e.Key == Key.Back)
         {
             (DataContext as MainViewModel)?.OnKeyInput("Back");
         }
-        // Weitere Tasten nach Bedarf ergänzen
     }
-
 }

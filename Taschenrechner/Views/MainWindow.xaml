@@ -73,11 +73,20 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- Info-Button -->
+        <Button Grid.Row="0" Content="ℹ Info"
+                HorizontalAlignment="Right"
+                FontSize="12" Padding="8,2"
+                Margin="0,0,0,5"
+                Click="InfoButton_Click"
+                Style="{StaticResource FunctionButtonStyle}" />
+
         <!-- Expression Display -->
-        <Border Grid.Row="0" BorderBrush="#CCCCCC" BorderThickness="1" Margin="0,0,0,5" CornerRadius="4" Background="AliceBlue">
+        <Border Grid.Row="1" BorderBrush="#CCCCCC" BorderThickness="1" Margin="0,0,0,5" CornerRadius="4" Background="AliceBlue">
             <TextBlock Text="{Binding ExpressionText}" 
                       FontSize="14" Padding="10,5" 
                       TextWrapping="Wrap"
@@ -87,7 +96,7 @@
         </Border>
 
         <!-- Main Display -->
-        <Border Grid.Row="1" BorderBrush="#CCCCCC" BorderThickness="1" Margin="0,0,0,10" CornerRadius="4" Background="AliceBlue">
+        <Border Grid.Row="2" BorderBrush="#CCCCCC" BorderThickness="1" Margin="0,0,0,10" CornerRadius="4" Background="AliceBlue">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -111,7 +120,7 @@
         </Border>
 
         <!-- Calculator Buttons -->
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
