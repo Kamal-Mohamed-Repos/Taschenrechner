@@ -1,16 +1,55 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="de">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MVVM in der Praxis mit WPF</title>
+  <style>
+    /* Wichtig: html/body 100% damit Höhen in Prozent funktionieren */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    /* Layout: Kopfzeile + Hauptbereich, iframe füllt Rest */
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: system-ui, Arial, sans-serif;
+    }
+
+    header {
+      padding: 12px 16px;
+      background: #fff;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      z-index: 1;
+    }
+
+    main {
+      flex: 1; /* nimmt den verbleibenden Platz ein */
+      min-height: 0; /* wichtig für korrekte overflow-behandlung in flex children */
+    }
+
+    /* iframe soll vollständig den main-Bereich füllen */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h2 style="margin:0 0 .25rem 0;">MVVM in der Praxis mit WPF</h2>
+    <p style="margin:0;">
+      <a href="ModelViewViewModelPatternPraxisnah.pdf" target="_blank" rel="noopener">PDF herunterladen</a>
+    </p>
+  </header>
 
-<h2>MVVM in der Praxis mit WPF</h2>  
-
-<p><a href="ModelViewViewModelPatternPraxisnah.pdf">PDF herunterladen</a></p>
-
-<iframe src="ModelViewViewModelPatternPraxisnah.pdf" width="100%" height="100%">
-</iframe>
-
+  <main>
+    <!-- optional: PDF-Viewer-Parameter anhängen, z. B. Fit oder Zoom -->
+    <iframe src="ModelViewViewModelPatternPraxisnah.pdf#view=FitH"></iframe>
+  </main>
 </body>
 </html>
