@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MVVM in der Praxis mit WPF</title>
   <style>
-    /* Wichtig: html/body 100% damit Höhen in Prozent funktionieren */
     html, body {
       height: 100%;
       margin: 0;
     }
-
-    /* Layout: Kopfzeile + Hauptbereich, iframe füllt Rest */
     body {
       display: flex;
       flex-direction: column;
@@ -26,11 +23,10 @@
     }
 
     main {
-      flex: 1; /* nimmt den verbleibenden Platz ein */
-      min-height: 0; /* wichtig für korrekte overflow-behandlung in flex children */
+      flex: 1; 
+      min-height: 0; 
     }
 
-    /* iframe soll vollständig den main-Bereich füllen */
     iframe {
       width: 100%;
       height: 100%;
@@ -48,7 +44,6 @@
   </header>
 
   <main>
-    <!-- optional: PDF-Viewer-Parameter anhängen, z. B. Fit oder Zoom -->
     <iframe src="ModelViewViewModelPatternPraxisnah.pdf#view=FitH"></iframe>
   </main>
 </body>
